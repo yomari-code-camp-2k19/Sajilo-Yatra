@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block body %}
+    <h1>Hello {{session.user_name}}, Add description about your local place, {{ session.location }}</h1>
+    {% from "includes/_formhelpers.html" import render_field  %}
+    
+        <form method="post" action="" >
+
+            <div class="form-group">
+                {{render_field(form.festival,class_="form-control")}}
+            </div>
+            <div class="form-group">
+                {{render_field(form.food,class_="form-control")}}
+            </div>
+            <div class="form-group">
+                {{render_field(form.events,class_="form-control")}}
+            </div>
+            <div class="form-group">
+                {{render_field(form.timing,class_="form-control")}}
+            </div>
+            <div class="form-group">
+                {{render_field(form.date,class_="form-control")}}
+            </div>
+            <div class="form-group">
+                {{render_field(form.duration,class_="form-control")}}
+            </div>
+            <div class="form-group">
+                {{render_field(form.description,class_="form-control")}}
+            </div>
+            <p><input type="submit" value="submit" class="btn btn-primary"/></p>
+        </form>
+        {% endblock %}

@@ -1,0 +1,78 @@
+{% extends "layout.html" %}
+
+{% block body %}
+{% include '_tables.html' %}
+<div>
+    <div style="margin-top:20px;width:60%;background-color:grey;">Recomended Plans
+      <table BORDER=10 BORDERCOLORLIGHT=black >
+        <tr>
+            <th>Location</th>
+            <th>Festival/Food/Event</th>
+            <th>Timing</th>
+            <th>Date</th>
+            <th>Duration</th>
+            <th>Description</th>
+        </tr>
+
+        {% for plan in recoplans %}
+        <tr>
+          <th>{{plan[1]}}</th>
+          <th>{{plan[2]}} {{plan[3]}} {{plan[4]}}</th>
+          <th>{{plan[6]}}</th>
+          <th>{{plan[7]}}</th>
+          <th>{{plan[8]}}</th>
+          <th>{{plan[9]}}</th>
+          </tr>
+
+
+      {% endfor %}
+
+      <tr >
+        <form action='/plans/addtoplanr' method='POST'>
+        <button style="margin-left:500px;" class="btn btn-primary" type='submit'>OK</button>
+        </form>
+      </tr>
+      </table>
+    </div>
+
+    <br>
+    <br>
+    <br>
+
+    <div style="width:60%;background-color:grey;">Customized Plans
+      <table BORDER=10 BORDERCOLORLIGHT=black >
+        <tr>
+            <th>Location</th>
+            <th>Festival/Food/Event</th>
+            <th>Timing</th>
+            <th>Date</th>
+            <th>Duration</th>
+            <th>Description</th>
+        </tr>
+
+        {% for plan in allplans %}
+        <tr>
+          <th>{{plan[1]}}</th>
+          <th>{{plan[2]}} {{plan[3]}} {{plan[4]}}</th>
+          <th>{{plan[6]}}</th>
+          <th>{{plan[7]}}</th>
+          <th>{{plan[8]}}</th>
+          <th>{{plan[9]}}</th>
+          </tr>
+
+      {% endfor %}
+      <tr>
+        <form action='/plans/addtoplanc' method='POST'>
+        <button class="btn btn-primary" style="margin-left:500px;" type='submit'>OK</button>
+        </form>
+      </tr>
+      </table>
+
+    </div>
+    <div style="height:300px;width:15%;float:right;background-color:grey;margin-right:-100px;margin-top:-300px;">
+
+      <a href='/pplans/{{session.user_id}}' style="color:black;font-size:40px;">Previous Plans!!</a>
+      </div>
+  </div>
+</div>
+    {% endblock %}

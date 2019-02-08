@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<div>
+    <div><h3>See your previous plans here!</h3>
+    </div>
+<ul class="list-group">
+  <div style="width:60%;background-color:grey;">
+    <table BORDER=10 BORDERCOLORDARK=grey >
+      <tr>
+          <th>Location</th>
+          <th>Festival/Food/Event</th>
+          <th>Timing</th>
+          <th>Date</th>
+          <th>Duration</th>
+          <th>Description</th>
+      </tr>
+      {% for plan in allplans %}
+      <tr>
+        <th>{{plan[1]}}</th>
+        <th>{{plan[2]}} {{plan[3]}} {{plan[4]}}</th>
+        <th>{{plan[6]}}</th>
+        <th>{{plan[7]}}</th>
+        <th>{{plan[8]}}</th>
+        <th>{{plan[9]}}</th>
+        </tr>
+
+    {% endfor %}
+    </table>
+    </div>
+</ul>
+</div>
+    {% endblock %}

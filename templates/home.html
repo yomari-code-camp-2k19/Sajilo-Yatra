@@ -1,0 +1,14 @@
+﻿{% extends "layout.html" %}
+
+{% block body %}
+<div class="jumbotron text-center">
+    <h3>Welcome To Sajilo Yatra Web Services</h3>
+    <p class="lead">Sajilo Yatra is a platform for foregin tourists to know about the local events, foods and festivals in Nepal.Register
+    or Login to get started.</p>
+    {% if session.logged_in==NULL %}
+    <a href="/register" class="btn btn-primary btn-lg">Register</a>
+    <a href="/login" class="btn btn-success btn-lg">Login</a>
+
+    {% endif %}
+</div>
+    {% endblock %}

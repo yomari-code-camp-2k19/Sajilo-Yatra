@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+         <div class="information">
+           {% block body %}
+
+               {% from "includes/_formhelpers.html" import render_field  %}
+             <div style="margin-top:100px;width:70%;float:left;">
+                <form action="" method="POST">
+                 <div class="form-group">
+                     {{render_field(form.destination,class_="form-control")}}
+                 </div>
+                 <div class="form-group">
+                     {{render_field(form.month,class_="form-control")}}
+                 </div>
+                   <button type="submit" class="btn btn-primary">Submit</button>
+               </form>
+           </div>
+             <div style="margin-top:100px;height:300px;width:15%;float:right;background-color:grey;margin-right:-100px;">
+
+               <a href='/pplans/{{session.user_id}}' style="color:black;font-size:40px;">Previous Plans!!</a>
+               </div>
+           </div>
+               {% endblock %}
+
+
+      </div>
